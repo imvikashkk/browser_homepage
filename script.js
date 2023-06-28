@@ -3,7 +3,6 @@ const youtube1Placeholder = document.querySelector('.y1-place');
 const youtube2Placeholder = document.querySelector('.y2-place');
 const input = document.querySelectorAll("input");
 
-
 const gPlaceValue = "search or enter url"
 let i = 0;
 setInterval(() => {

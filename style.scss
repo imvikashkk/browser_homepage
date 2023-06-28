@@ -27,9 +27,37 @@
 
 
 @keyframes blink-caret {
-    0%, 100%{ border-color: transparent }
-    50% { border-color: orange; }
+
+    0%,
+    100% {
+        border-color: transparent
+    }
+
+    50% {
+        border-color: orange;
+    }
 }
+
+@keyframes blinker {
+    from {
+        opacity: 1.0;
+    }
+
+    to {
+        opacity: 0.0;
+    }
+}
+
+@keyframes fade {
+    from {
+        transform: scale(0.8);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
 
 img {
     @include imgSelectionOff();
@@ -44,10 +72,7 @@ body {
     color: white;
 }
 
-
 // .wrapper{
-
-
 // }
 
 main {
@@ -66,6 +91,9 @@ main {
     display: flex;
     align-items: stretch;
     box-shadow: 0 0 10px orange inset;
+    background-color: black;
+    border-radius: 20px;
+
     .name {
         width: 60vw;
         max-width: 800px;
@@ -76,35 +104,52 @@ main {
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 30px;
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
     }
 }
 
 .name {
     img {
-        width: 60px;
-        height: 60px;
+        width: 50px;
+        height: 50px;
         border-radius: 50%;
-        box-shadow: 0 0 50px red;
-        border: 1px solid white;
+        // box-shadow: 0 0 50px red;
         opacity: 0.9;
         @include imgSelectionOff();
+        transform: rotate(0deg);
+
+        animation-name: fade;
+        animation-duration: 0.2s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+        animation-direction: alternate;
+
+
     }
 
     h1 {
-        color: #ed7804;
-        text-shadow: 4px 4px 2px rgb(0, 0, 0),
-        -2px -2px 2px rgb(0, 0, 0);
+        color: orange;
+        text-shadow: 2px 2px 4px rgb(100, 4, 4),
+                        -2px -2px 4px rgb(255, 55, 55);
         font-size: 3.2rem;
-        opacity: 0.8;
+        opacity: 0.9;
         @include textSelectionOff();
+        /* Blinking the text */
+        text-decoration: blink;
+        animation-name: blinker;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+        animation-direction: alternate;
 
         &:hover {
             cursor: context-menu;
         }
     }
-}
 
+}
 
 
 
@@ -171,7 +216,6 @@ main {
     }
 
 }
-
 
 
 .other-search {
@@ -403,19 +447,19 @@ input:focus {
             min-width: 380px;
         }
 
-    .name {
-        img {
-            width: 50px;
-            height: 50px;
+        .name {
+            img {
+                width: 40px;
+                height: 40px;
+            }
         }
-    }
     }
 
     .google-search {
         .search-bar {
 
-            label{
-                top:10px ;
+            label {
+                top: 10px;
                 font-size: 2.1rem;
             }
         }
@@ -423,20 +467,21 @@ input:focus {
     }
 
 
-    
-.youtube-search {
-    .search-bar {
-        input{
-            padding-top: 10px;
-        }
-        label {
-            font-size: 1.9rem;
-            left: 50px;
-            top: 10px;
-        }
-    }
 
-}
+    .youtube-search {
+        .search-bar {
+            input {
+                padding-top: 10px;
+            }
+
+            label {
+                font-size: 1.9rem;
+                left: 50px;
+                top: 10px;
+            }
+        }
+
+    }
 
 
 }
@@ -472,7 +517,10 @@ input:focus {
     }
 
     .name-container {
+        // background-color: transparent;
         box-shadow: none;
+        box-shadow: 0 2px 3px 0 orange;
+
         .name {
             min-width: 290px;
         }
@@ -480,8 +528,12 @@ input:focus {
 
     .name {
         img {
-            width: 50px;
-            height: 50px;
+            width: 35px;
+            height: 35px;
+        }
+        h1{
+            text-shadow: 2px 2px 4px rgb(100, 4, 4),
+                            -2px -2px 4px rgb(255, 55, 55);
         }
     }
 
@@ -498,7 +550,8 @@ input:focus {
                 top: 5px;
                 left: 4px;
             }
-            label{
+
+            label {
                 top: 10px;
                 font-size: 2.6rem;
             }
@@ -513,7 +566,7 @@ input:focus {
         .search-bar {
 
             input {
-               font-size: 2.3rem;
+                font-size: 2.3rem;
             }
 
             img {
@@ -523,7 +576,8 @@ input:focus {
                 left: 10px;
                 opacity: 0.9;
             }
-            label{
+
+            label {
                 top: 12px;
                 font-size: 2.1rem;
             }
@@ -536,20 +590,28 @@ input:focus {
 @media screen and (max-width:402px) {
     .name-container {
         .name {
-            transform: scale(0.7);
+            transform: scale(1);
 
             h1 {
                 font-size: 4rem;
+            }
+        }
+
+        .name {
+            img {
+                width: 38px;
+                height: 38px;
             }
         }
     }
 
     .google-search {
         min-width: 310px;
+
         .search-bar {
 
-            label{
-                top:10px ;
+            label {
+                top: 10px;
                 font-size: 2.5rem;
             }
         }
