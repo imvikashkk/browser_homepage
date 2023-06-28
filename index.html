@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>imvikashkk</title>
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="favicon_io/site.webmanifest">
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <main>
+
+            <section class="name-container">
+                <div class="name">
+                    <img src="image.jpeg" alt="" >
+                    <h1>@imvikashkk</h1>
+                </div>
+            </section>
+
+            <section class="search">
+                <div class="g-search">
+                    <div class="google-search">
+                        <div class="search-bar">
+                            <img src="icons/google.svg" alt="Google-Icon" width="20px">
+                            <input type="text" id="gs-input" autocomplete="off" onkeydown="search_google(this)"
+                               tabindex="-1" >
+                               <label class="g-place" for="gs-input"></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="other-search">
+                    <div class="youtube-search">
+                        <div class="search-bar">
+                            <img src="icons/youtube.svg" alt="Youtube-Icon" width="10px">
+                            <input type="text" autocomplete="off" onkeydown="search_youtube(this)"
+                             tabindex="-1" id="y1-input">
+                             <label class="y1-place" for="y1-input"></label>
+                        </div>
+                    </div>
+
+                    <div class="youtube-search">
+                        <div class="search-bar">
+                            <img src="icons/youtube.svg" alt="Youtube-Icon" width="10px">
+                            <input type="text" autocomplete="off" onkeydown="search_youtube(this)"
+                             tabindex="-1" id="y2-input">
+                             <label class="y2-place" for="y2-input"></label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="short-cuts">
+                <div class="sc github" onclick="gitHub()">
+                    <div class="icon-con">
+                        <i class="fa-brands fa-square-github"></i>
+                    </div>
+                    <p>GitHub</p>
+                </div>
+                <div class="sc chatgpt" onclick="chatGpt()">
+                    <div class="img-con">
+                        <img src="icons/chatgpt.svg" alt="chatgpt-icon">
+                    </div>
+                    <p>ChatGpt</p>
+                </div>
+                <div class="sc linkedin" onclick="linkedin()">
+                    <div class="icon-con">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </div>
+                    <p>Linkedin</p>
+                </div>
+                <div class="sc gmail" onclick="gmail()">
+                    <div class="img-con">
+                        <img src="icons/gmail.svg" alt="Gmail-Icon">
+                    </div>
+                    <p>Gmail</p>
+                </div>
+            </section>
+
+        </main>
+
+        <div class="news-cards">
+
+        </div>
+        
+    </div>
+
+    <script src="script.js"></script>
+    <!-- Font Awesome Script -->
+    <script src="https://kit.fontawesome.com/7f0208681a.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
